@@ -17,15 +17,12 @@ video: Chapter 2 - Part 3
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ bool
+ float
+ double
+ char
+ void
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
@@ -65,10 +62,28 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int soundType = 1;
+    int ingredient = 5;
+    int x = 7;
+
+    float ambient = 3.5f;
+    float surface = 86.4f;
+    float material = 123.2f;
+
+    bool shoots = true;
+    bool jumps = false;
+    bool isGrounded = true;
+
+    double isTurnedOn = 12838.2f;
+    double isTurnedOff = 0.42f;
+    double drinks = 1.3f;
+
+    char isDown = 'r';
+    char isHungry = 'h';
+    char barks = '+';
     
-    
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, soundType, ingredient, x, ambient, surface, material, shoots, jumps, isGrounded, isTurnedOn, isTurnedOff, drinks, isDown, isHungry, barks); //passing each variable declared to the ignoreUnused() function
+
 }
 /*
  10 functions
@@ -83,42 +98,79 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool orderFood(bool payFood, int quantity = 1)
+{ 
+    ignoreUnused(payFood, quantity);
+    return {};
+} 
 /*
  2)
  */
-
+float distanceAB(float distanceA, float distanceB)
+{ 
+    ignoreUnused(distanceA, distanceB);
+    return {};
+} 
 /*
  3)
  */
-
+void letters(char y ='1', char b = '2')
+{ 
+    ignoreUnused(y,b);
+} 
 /*
  4)
  */
-
+double purchase(float price = 9.99f, bool isInInventory = true)
+{ 
+    ignoreUnused(price, isInInventory);
+    return {};
+} 
 /*
  5)
  */
-
+int weightDP(int weightD = 823, int weightP = 291)
+{ 
+    ignoreUnused(weightD, weightP);
+    return {};
+} 
 /*
  6)
  */
-
+void playSound(bool keyDown = true)
+{ 
+    ignoreUnused(keyDown);
+} 
 /*
  7)
  */
-
+void changeParameters(float ambMain = 6.3f, float mxMain = 1.8f)
+{ 
+    ignoreUnused(ambMain, mxMain);
+} 
 /*
  8)
  */
-
+int countHours(int TimeA, int TimeB)
+{ 
+    ignoreUnused(TimeA, TimeB);
+    return {};
+} 
 /*
  9)
  */
-
+void activateSound(bool characterGetsThrough = true)
+{ 
+    ignoreUnused(characterGetsThrough);
+} 
 /*
  10)
  */
+bool findObject(bool isFound = true)
+{ 
+    ignoreUnused(isFound);
+    return {};
+} 
 
 int main()
 {
@@ -126,27 +178,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto orderDelivered = orderFood(true, 1);
     //2)
-    
+    auto calculateDistance = distanceAB(4.3f, 2.12f);
     //3)
-    
+    letters('y', 'n');
     //4)
-    
+    auto buyDiamonds = purchase(10.3f, true);
     //5)
-    
+    auto horseWeight = weightDP(823, 91);
     //6)
-    
+    playSound(true);
     //7)
-    
+    changeParameters(92.3f, 102.9f);
     //8)
-    
+    auto restTime = countHours(24, 12);
     //9)
-    
+    activateSound(false);
     //10)
+    auto findShirt = findObject(true);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, orderDelivered, calculateDistance, buyDiamonds,horseWeight, restTime, findShirt);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
