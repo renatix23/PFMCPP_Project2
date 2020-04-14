@@ -74,9 +74,9 @@ void variableDeclarations()
     bool jumps = false;
     bool isGrounded = true;
 
-    double isTurnedOn = 12838.2f;
-    double isTurnedOff = 0.42f;
-    double drinks = 1.3f;
+    double isTurnedOn = 12838.2;
+    double isTurnedOff = 0.42;
+    double drinks = 1.3;
 
     char isDown = 'r';
     char isHungry = 'h';
